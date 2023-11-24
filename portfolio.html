@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Aashik</title>
+    <link rel="icon" type="image/x-icon" href="C:\Users\ELCOT\Downloads\Portfolio\logo.jpg"/>
+	<style>
+	:root
+{
+    --primary-color:#0b0214;
+    --secondary-color:#84c6fc;
+}
+html
+{
+    scroll-behavior:smooth;
+}
+body
+{
+    margin:0;
+    background:var(--primary-color);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:var(--secondary-color);
+    font-size:1.5rem;
+}
+nav
+{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding-inline:30px;
+    background-color: rgba(25,24,24,0.5);
+    color:var(--secondary-color);
+}
+nav ul
+{
+    display:flex;
+    height:100%;
+    gap:20px;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+nav ul li a
+{
+    text-decoration:none;
+    color:#fff;
+    font-size: 1.2rem;
+}
+nav ul li a:hover
+{
+    text-decoration: none;
+    color:#ccc;
+}
+nav .fab
+{
+    font-size:1.4rem;
+}
+nav .icons
+{
+    margin-right:50px;
+}
+footer
+{
+    margin-top:50px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding-inline:30px;
+    background-color: rgba(25,24,24,0.5);
+    color:var(--secondary-color);
+}
+.logo img
+{
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    cursor:pointer;
+}
+.logo:hover
+{
+    transform:scale(1.05);
+    transition:500ms ease-in-out;
+}
+.landing
+{
+    height:100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+.profile-pic
+{
+    width:300px;
+    height:auto;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation:flow 2s ease-in-out infinite alternate;
+}
+.about-me
+{
+    word-wrap:break-word;
+    overflow-wrap:break-word;
+    width:50%;
+    padding:30px;
+}
+.icons
+{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+    font-size:40px;
+}
+.fab:hover
+{
+    cursor:pointer;
+    transform:scale(1.07);
+}
+.skills-section
+{
+    min-height:100vh;
+    max-height:max-content;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    gap:20px;
+}
+.skill-card
+{
+    height:600px;
+    width:350px;
+    background: var(--secondary-color);
+    color:var(--primary-color);
+    border-radius:15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor:pointer;
+    transition:500ms ease-in-out;
+}
+.skill-card img
+{
+    object-fit:contain;
+}
+.skill-card ul
+{
+    list-style: none;
+}
+.skill-card h2
+{
+    color:var(--primary-color);
+    text-align:center;
+}
+.skill-card img
+{
+    height:200px;
+    width:auto;
+    background: transparent;
+}
+.skill-card:hover
+{
+    transform:scale(1.04);
+}
+.project-section
+{
+    min-height:100vh;
+    max-height:max-content;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom:110px;
+}
+.project-card
+{
+    color:var(--primary-color);
+    padding:20px;
+    width:500px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+    background: var(--secondary-color);
+    cursor:pointer;
+    transition:500ms ease-in-out;
+}
+@keyframes fadein {
+    0%
+    {
+        opacity:0;
+        transform:translateX(-100px);
+    }
+    100%
+    {
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+@keyframes flow {
+    0%
+    {
+        transform: translateY(0px);
+        border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    100%
+    {
+        transform:translateY(20px);
+        border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+    }
+}
+@keyframes rotate {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform:rotate(360deg);
+    }
+}
+@keyframes gradient{
+    0%
+    {
+        background:var(--secondary-color);
+    }
+    50%
+    {
+        fliter:blur(5px);
+    }
+    100%
+    {
+        filter:blur(0px);
+        background:#ffadad;
+    }
+}
+@keyframes shake {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    25%
+    {
+        transform: rotate(5deg);
+    }
+    50%
+    {
+        transform: rotate(0deg);
+    }
+    75%
+    {
+        transform: rotate(-5deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
+@media screen and (max-width:1200px)
+{
+    body
+    {
+        font-size:1.3rem;
+    }
+    .landing
+    {
+        flex-direction: column;
+        display: flex;
+        height:auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-me
+    {
+        width:80%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        word-wrap: break-word;
+    }
+    .skills-section
+    {
+        margin-top:100px;
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+    }
+    .skill-card
+    {
+        animation:none;
+        width:80%;
+        text-align: center;
+    }
+    .skill-card ul
+    {
+        padding: 0;
+        margin: 0;
+    }
+    .project-section
+    {
+        height: auto;
+        gap:40px;
+    }
+    .project-card
+    {
+        width:80%;
+    }
+    nav ul
+    {
+        display: none;
+    }
+    footer
+    {
+        display: none;
+    }
+}
+@media screen and (min-width:1201px)
+{
+    .project-card
+    {
+        transition: 500ms ease-in-out;
+    }
+    .project-card:hover
+    {
+        transform: translate(0,-400px);
+    }
+    .project-card:nth-child(4)
+    {
+        transform: translateY(100px) translateY(-200px);
+    }
+    .project-card:nth-child(4):hover
+    {
+        transform: translateX(150px) translateY(0px);
+    }
+    .project-card:nth-child(2)
+    {
+        transform: translateX(100px) translateY(0px);
+    }
+    .project-card:nth-child(2):hover
+    {
+        transform: translateX(150px) translateY(0px);
+    }
+    .project-card:nth-child(3)
+    {
+        transform: translateX(-100px) translateY(-100px);
+    }
+    .project-card:nth-child(3):hover
+    {
+        transform:translateX(-150px) translateY(-100px);
+        z-index:2;
+    }
+}
+ </style>
+    <script>
+	window.addEventListener('scroll', ()==>{
+    document.body.style.setProperty('--scroll', window.pageXOffset / (document.body.offsetHeight-window.innerHeight));
+},false);</script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="C:\Users\ELCOT\Downloads\Portfolio\Mine.jpg" alt="" />
+        </div>
+        <ul class="nav-links">
+            <li><a href="#landing">Home</a></li>
+            <li><a href="#skills">About</a></li>
+            <li><a href="#projects">Contact</a></li>
+        </ul>
+        <div class="icons">
+            <a href="https://www.google.com">
+                <i id="gitHubIcon" class="fab fa-github" style="color:black"></i>
+            </a>
+            <a href="https://instagram.com/__aashik._ii">
+                <i
+                 id="instagramIcon"
+                 class="fab fa-instagram"
+                 style="color: #c13584"></i>
+            </a>
+            <a href="https://www.linkedin.com">
+                <i 
+                 id="linkedinIcon"
+                 class="fab fa-linkedin"
+                 style="color:#0077b5"></i>
+            </a>
+        </div>
+    </nav>
+    <div class="landing" id="landing">
+        <div class="about-me">
+            <h1>Hi, Myself Aashik </h1>
+            <h3>Simplicity wins</h3>
+            <p>
+                I am Inevitable.
+            </p>
+            <div class="icons">
+                <a href="https://www.google.com">
+                    <i id="gitHubIcon" class="fab fa-github" style="color:black"></i>
+                </a>
+                <a href="https://instagram.com/__aashik._ii">
+                    <i
+                     id="instagramIcon"
+                     class="fab fa-instagram"
+                     style="color: #c13584"></i>
+                </a>
+                <a href="https://www.linkedin.com">
+                    <i 
+                     id="linkedinIcon"
+                     class="fab fa-linkedin"
+                     style="color:#0077b5"></i>
+                </a> 
+            </div>
+        </div>
+        <img class="profile-pic" src=""/>
+    </div>
+    <div class="skills-section" id="skills">
+        <div class="skill-card">
+            <h2>FrontEnd</h2>
+            <img style="margin-top:50px" src="C:\Users\ELCOT\Downloads\Portfolio\splash.png" alt=""/>
+            <ul>
+                <li>Languages: HTML,CSS,JavaScript</li>
+                <li>Frameworks: Bootstrap</li>
+            </ul>
+        </div>
+        <div class="skill-card">
+            <h2>BackEnd</h2>
+            <img style="height:300px" class="rotate" src="C:\Users\ELCOT\Downloads\Portfolio\m-removebg-preview.png" alt=""/>
+            <ul style="z-index:1; transform:translateY(-50px)">
+             <li>Framework: .NET Core</li>
+             <li>DataBase: SQL </li>
+            </ul>
+        </div>
+        <div class="skill-card">
+            <h2>Tools</h2>
+            <img style="margin-top:50px" src="C:\Users\ELCOT\Downloads\Portfolio\am-removebg-preview.png" alt="" />
+            <ul>
+                <li>Working:VS Code</li>
+                <li>Sources:GitHub</li>
+            </ul>
+        </div>
+    </div>
+    <div class="project-section" id="projects">
+        <h1 style="font-size:3.5rem;width:100%;text-align:center;">Some Curiousity works</h1>
+        <div class="project-card">
+            <h1>
+                GitHub
+                <a href="https://www.google.com">
+                    <i id="gitHubIcon" class="fab fa-github" style="color:black"></i>
+                </a>
+            </h1>
+            <p>
+                I develop 
+            </p>
+        </div>
+        <div class="project-card">
+            <h1>
+                Social Media
+                <a href="https://instagram.com/__aashik._ii">
+                    <i
+                     id="instagramIcon"
+                     class="fab fa-instagram"
+                     style="color: #c13584"></i>
+                </a>
+            </h1>
+            <p>
+                On my Instagram account
+            </p>
+        </div>
+        <div class="project-card">
+            <h1>Building
+                <i class="fas fa-code"></i>
+            </h1>
+            <p>
+                During my free time
+            </p>
+        </div>
+    </div>
+    <footer>
+        <p>
+            <i
+             id="instagramIcon"
+             class="fab fa-instagram"
+             style="color: #c13584"></i>
+             @__aashik._ii
+        </p>
+    </footer>
+</body>
+</html>
